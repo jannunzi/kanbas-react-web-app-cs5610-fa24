@@ -23,7 +23,7 @@ export default function KanbasNavigation() {
         href="https://www.northeastern.edu/"
         id="wd-neu-link"
         target="_blank"
-        className="list-group-item bg-black border-0"
+        className="list-group-item bg-black border-0 text-center"
       >
         <img src="/images/NEU.png" width="75px" />
       </a>
