@@ -5,7 +5,7 @@ import TOC from "./TOC";
 
 export default function Labs() {
   return (
-    <div>
+    <div className="container-fluid">
       <h1>Jose Annunziato</h1>
       <h1>Labs</h1>
       <TOC />
