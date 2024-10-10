@@ -16,7 +16,7 @@ export default function Signin() {
       />
       <Link
         id="wd-signin-btn"
-        to="/Kanbas/Account/Profile"
+        to="/Kanbas/Dashboard"
         className="btn btn-primary w-100"
       >
         Sign in
