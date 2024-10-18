@@ -1,8 +1,13 @@
+import { useSelector } from "react-redux";
+
 export default function Lab1() {
+  const { message } = useSelector((state: any) => state.helloReducer);
+
   return (
     <div id="wd-lab1">
       <h2>Lab 1</h2>
       <h3>HTML Examples</h3>
+      {message}
       <div id="wd-h-tag">
         <h4>Heading Tags</h4>
         Text documents are often broken up into several sections and
