@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { setCurrentUser } from "./reducer";
 export default function Profile() {
@@ -17,7 +17,7 @@ export default function Profile() {
   };
   useEffect(() => {
     fetchProfile();
-  }, []);
+  });
   return (
     <div id="wd-profile-screen">
       <h3>Profile</h3>
