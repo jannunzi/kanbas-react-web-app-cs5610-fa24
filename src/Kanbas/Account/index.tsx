@@ -8,19 +8,11 @@ import { useSelector } from "react-redux";
 export default function Account() {
   const { currentUser } = useSelector((state: any) => state.accountReducer);
   return (
-    <div>
-      <h2>Account</h2>
-      <table>
-        <tbody>
-          <tr>
-            <td valign="top">
-              <AccountNavigation />
-            </td>
-            <td valign="top">
-              <Routes>
-                <Route
-                  path="/"
-                  element={
+    <div className="d-flex">
+      <AccountNavigation />
+      <div className="flex-fill">
+        <Routes>
+          <Route path="/" element={
                     <Navigate
                       to={
                         currentUser
@@ -28,16 +20,12 @@ export default function Account() {
                           : "/Kanbas/Account/Signin"
                       }
                     />
-                  }
-                />
-                <Route path="/Signin" element={<Signin />} />
-                <Route path="/Profile" element={<Profile />} />
-                <Route path="/Signup" element={<Signup />} />
-              </Routes>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+                  } />
+          <Route path="/Signin" element={<Signin />} />
+          <Route path="/Profile" element={<Profile />} />
+          <Route path="/Signup" element={<Signup />} />
+        </Routes>
+      </div>
     </div>
   );
 }

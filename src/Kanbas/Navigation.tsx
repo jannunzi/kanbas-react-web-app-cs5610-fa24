@@ -1,11 +1,13 @@
 import { AiOutlineDashboard } from "react-icons/ai";
-import { IoCalendarOutline } from "react-icons/io5";
+import { IoCalendarOutline, IoSpeedometerOutline } from "react-icons/io5";
 import { LiaBookSolid, LiaCogSolid } from "react-icons/lia";
-import { FaInbox, FaRegCircleUser } from "react-icons/fa6";
+import { FaCalendar, FaInbox, FaRegCircleUser } from "react-icons/fa6";
 import { Link, useLocation } from "react-router-dom";
+import { MdOutlineAccountCircle } from "react-icons/md";
 
 export default function KanbasNavigation() {
   const { pathname } = useLocation();
+
   const links = [
     { label: "Dashboard", path: "/Kanbas/Dashboard", icon: AiOutlineDashboard },
     { label: "Courses", path: "/Kanbas/Dashboard", icon: LiaBookSolid },
@@ -46,7 +48,7 @@ export default function KanbasNavigation() {
       </Link>
       {links.map((link) => (
         <Link
-          key={link.path}
+          key={link.label}
           to={link.path}
           className={`list-group-item bg-black text-center border-0
               ${

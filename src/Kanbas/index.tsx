@@ -7,6 +7,7 @@ import KanbasNavigation from "./Navigation";
 import * as db from "./Database";
 import store from "./store";
 import { Provider } from "react-redux";
+import "./styles.css";
 
 import "./styles.css";
 import ProtectedRoute from "./Account/ProtectedRoute";

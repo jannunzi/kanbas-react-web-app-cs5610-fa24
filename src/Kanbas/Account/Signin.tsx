@@ -49,6 +49,7 @@ export default function Signin() {
         {" "}
         Sign in{" "}
       </button>
+
       <Link id="wd-signup-link" to="/Kanbas/Account/Signup">
         Sign up
       </Link>
