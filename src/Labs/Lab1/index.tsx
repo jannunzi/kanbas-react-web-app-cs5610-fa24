@@ -2,6 +2,8 @@ import { useSelector } from "react-redux";
 
 export default function Lab1() {
   const { message } = useSelector((state: any) => state.helloReducer);
+  const { sum } = useSelector((state: any) => state.addReducer);
+  const { count } = useSelector((state: any) => state.counterReducer);
 
   return (
     <div id="wd-lab1">
@@ -9,6 +11,8 @@ export default function Lab1() {
       <h3>HTML Examples</h3>
       {message}
       <div id="wd-h-tag">
+        <h2>SUM: {sum}</h2>
+        <h2>COUNT: {count}</h2>
         <h4>Heading Tags</h4>
         Text documents are often broken up into several sections and
         subsections. Each section is usually prefaced with a short title or
