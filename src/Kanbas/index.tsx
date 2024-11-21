@@ -4,12 +4,9 @@ import Account from "./Account";
 import Courses from "./Courses";
 import Dashboard from "./Dashboard";
 import KanbasNavigation from "./Navigation";
-import store from "./store";
 import { Provider, useSelector } from "react-redux";
 import "./styles.css";
 import ProtectedRoute from "./Account/ProtectedRoute";
-import Session from "./Account/Session";
-import * as db from "./Database";
 import * as courseClient from "./Courses/client";
 import * as userClient from "./Account/client";
 export default function Kanbas() {
