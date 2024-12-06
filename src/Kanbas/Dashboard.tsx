@@ -8,6 +8,9 @@ export default function Dashboard({
   addNewCourse,
   deleteCourse,
   updateCourse,
+  enrolling,
+  setEnrolling,
+  updateEnrollment,
 }: {
   courses: any[];
   course: any;
@@ -15,11 +18,20 @@ export default function Dashboard({
   addNewCourse: () => void;
   deleteCourse: (course: any) => void;
   updateCourse: () => void;
+  enrolling: boolean;
+  setEnrolling: (enrolling: boolean) => void;
+  updateEnrollment: (course: string, enrolled: boolean) => void;
 }) {
   const { currentUser } = useSelector((state: any) => state.accountReducer);
 
   return (
     <div id="wd-dashboard">
+      <button
+        onClick={() => setEnrolling(!enrolling)}
+        className="float-end btn btn-primary"
+      >
+        {enrolling ? "My Courses" : "All Courses"}
+      </button>
       <h1 id="wd-dashboard-title">Dashboard</h1> <hr />
       <h5>
         New Course
@@ -66,6 +78,19 @@ export default function Dashboard({
                 >
                   <img src="/images/reactjs.jpg" width="100%" />
                   <div className="card-body">
+                    {enrolling && (
+                      <button
+                        onClick={(event) => {
+                          event.preventDefault();
+                          updateEnrollment(course._id, !course.enrolled);
+                        }}
+                        className={`btn ${
+                          course.enrolled ? "btn-danger" : "btn-success"
+                        } float-end`}
+                      >
+                        {course.enrolled ? "Unenroll" : "Enroll"}
+                      </button>
+                    )}
                     <h5 className="wd-dashboard-course-title card-title">
                       {course.name}
                     </h5>
